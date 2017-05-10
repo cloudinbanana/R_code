@@ -1,0 +1,66 @@
+###No.1
+f1=function(x0)
+{
+  x=matrix(0,11)
+  x[1]=x0
+    for(i in 1:10)
+    {x[i+1]=3*x[i]%%150} 
+  return(x[2:11])
+}
+f1(5)
+###Chapter3
+###No.2
+f2=function(x0)
+{
+  x=matrix(0,11)
+  x[1]=x0
+  for(i in 1:10)
+  {x[i+1]=(5*x[i]+7)%%200} 
+  return(x[2:11])
+}
+f2(3)
+###No.3 functon #####
+f3=function(n,a,b,g)
+{
+  x=runif(n)
+  sum((b-a)*g(a+(b-a)*x))/n
+}
+f4=function(n,f)
+{
+  x=runif(n)
+  y=runif(n)
+  sum(f(x,y))/n
+}
+###No.3
+g3=function(x)exp(exp(x))
+f3(1000000,0,1,g3)
+integrate(g3,lower=0,upper=1)
+###No.4
+g4=function(x)(1-x^2)^(3/2)
+f3(1000000,0,1,g4)
+integrate(g4,lower=0,upper=1)
+###No.5
+g5=function(x)(exp(x+x^2))
+f3(1000000,-2,2,g5)
+integrate(g5,lower=-2,upper=2)
+###No.6
+g6=function(x)(x*(1+x^2)^(-2))
+hy6=function(y)(g6(1/y-1)/y^2)
+f3(1000000,0,1,hy6)
+integrate(g6,lower=0,upper=Inf)
+###No.7duality property
+g7=function(x)(exp(-x^2))
+hy7=function(y)(g7(1/y-1)/y^2)
+f3(1000000,0,1,hy7)*2
+integrate(g7,lower=-Inf,upper=Inf)
+###No.8
+fxy8=function(x,y)(exp(x+y)^2)
+f4(100000,fxy8)
+integrate(g6,lower=0,upper=Inf)
+###No.9
+  
+###No.10
+###No.11
+###No.12
+###No.13
+###No.14

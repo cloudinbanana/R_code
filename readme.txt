@@ -1,0 +1,1 @@
+this repository is about the R code of statistic studt
